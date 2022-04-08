@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/xps-blogapiui/blog_posts" method="POST">
+		<service class="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="XPS_BlogApiUi::blog_posts_save"/>
+		</resources>
+	</route>
+	<route url="/V1/xps-blogapiui/blog_posts/search" method="GET">
+		<service class="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="XPS_BlogApiUi::blog_posts_view"/>
+		</resources>
+	</route>
+	<route url="/V1/xps-blogapiui/blog_posts/:blogPostsId" method="GET">
+		<service class="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="XPS_BlogApiUi::blog_posts_view"/>
+		</resources>
+	</route>
+	<route url="/V1/xps-blogapiui/blog_posts/:blogPostsId" method="PUT">
+		<service class="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="XPS_BlogApiUi::blog_posts_update"/>
+		</resources>
+	</route>
+	<route url="/V1/xps-blogapiui/blog_posts/:blogPostsId" method="DELETE">
+		<service class="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="XPS_BlogApiUi::blog_posts_delete"/>
+		</resources>
+	</route>
+</routes>

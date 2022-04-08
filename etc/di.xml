@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="XPS\BlogApiUi\Api\BlogPostsRepositoryInterface" type="XPS\BlogApiUi\Model\BlogPostsRepository"/>
+	<preference for="XPS\BlogApiUi\Api\Data\BlogPostsInterface" type="XPS\BlogApiUi\Model\BlogPosts"/>
+	<preference for="XPS\BlogApiUi\Api\Data\BlogPostsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="XPS\BlogApiUi\Model\ResourceModel\BlogPosts\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">xps_blogapiui_blog_posts</argument>
+			<argument name="resourceModel" xsi:type="string">XPS\BlogApiUi\Model\ResourceModel\BlogPosts\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="xps_blogapiui_blog_posts_listing_data_source" xsi:type="string">XPS\BlogApiUi\Model\ResourceModel\BlogPosts\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

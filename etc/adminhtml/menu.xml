@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="XPS::top_level" title="XPS" module="XPS_BlogApiUi" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="XPS_BlogApiUi::xps_blogapiui_blog_posts" title="blog posts" module="XPS_BlogApiUi" sortOrder="9999" resource="Magento_Backend::content" parent="XPS::top_level" action="xps_blogapiui/blogposts/index"/>
+	</menu>
+</config>

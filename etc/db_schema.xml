@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="xps_blogapiui_blog_posts" resource="default" engine="innodb" comment="xps_blogapiui_blog_posts Table">
+		<column xsi:type="int" name="blog_posts_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="blog_posts_id"/>
+		</constraint>
+		<column name="title" nullable="true" xsi:type="varchar" comment="title" length="255"/>
+		<column name="content" nullable="true" xsi:type="text" comment="content"/>
+		<column name="created_at" nullable="true" xsi:type="datetime" comment="created_at" default="CURRENT_TIMESTAMP"/>
+	</table>
+</schema>
