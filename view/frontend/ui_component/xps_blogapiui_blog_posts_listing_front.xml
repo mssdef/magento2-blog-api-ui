@@ -2,13 +2,13 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 	<argument name="data" xsi:type="array">
 		<item name="js_config" xsi:type="array">
-			<item name="provider" xsi:type="string">xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_listing_data_source</item>
+			<item name="provider" xsi:type="string">xps_blogapiui_blog_posts_listing_front.xps_blogapiui_blog_posts_listing_data_source</item>
 		</item>
 	</argument>
 	<settings>
 		<spinner>xps_blogapiui_blog_posts_columns</spinner>
 		<deps>
-			<dep>xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_listing_data_source</dep>
+			<dep>xps_blogapiui_blog_posts_listing_front.xps_blogapiui_blog_posts_listing_data_source</dep>
 		</deps>
 		<buttons>
 			<button name="add">

@@ -2,12 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<body>
 		<referenceContainer name="content">
+            <uiComponent name="xps_blogapiui_blog_posts_listing_front"/>
+            <uiComponent name="xps_blogapiui_blog_posts_form_front"/>
+
 			<block name="posts.index" class="XPS\BlogApiUi\Block\Posts\Index" template="XPS_BlogApiUi::posts/index.phtml">
             </block>
-            <uiComponent name="xps_blogapiui_blog_posts_listing"/>
-            <!--
-            <uiComponent name="xps_blogapiui_blog_posts_form"/>
-            -->
 		</referenceContainer>
 	</body>
 </page>

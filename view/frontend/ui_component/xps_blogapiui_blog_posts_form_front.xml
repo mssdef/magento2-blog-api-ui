@@ -2,7 +2,7 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 	<argument name="data" xsi:type="array">
 		<item name="js_config" xsi:type="array">
-			<item name="provider" xsi:type="string">xps_blogapiui_blog_posts_form.blog_posts_form_data_source</item>
+			<item name="provider" xsi:type="string">xps_blogapiui_blog_posts_form_front.blog_posts_form_data_source</item>
 		</item>
 		<item name="label" xsi:type="string" translate="true">General Information</item>
 		<item name="template" xsi:type="string">templates/form/collapsible</item>
@@ -14,10 +14,10 @@
 			<button name="save" class="XPS\BlogApiUi\Block\Adminhtml\Blog\Posts\Edit\SaveButton"/>
 			<button name="save_and_continue" class="XPS\BlogApiUi\Block\Adminhtml\Blog\Posts\Edit\SaveAndContinueButton"/>
 		</buttons>
-		<namespace>xps_blogapiui_blog_posts_form</namespace>
+		<namespace>xps_blogapiui_blog_posts_form_front</namespace>
 		<dataScope>data</dataScope>
 		<deps>
-			<dep>xps_blogapiui_blog_posts_form.blog_posts_form_data_source</dep>
+			<dep>xps_blogapiui_blog_posts_form_front.blog_posts_form_data_source</dep>
 		</deps>
 	</settings>
 	<dataSource name="blog_posts_form_data_source">
