@@ -5,7 +5,9 @@
 			<block name="posts.index" class="XPS\BlogApiUi\Block\Posts\Index" template="XPS_BlogApiUi::posts/index.phtml">
             </block>
             <uiComponent name="xps_blogapiui_blog_posts_listing"/>
+            <!--
             <uiComponent name="xps_blogapiui_blog_posts_form"/>
+            -->
 		</referenceContainer>
 	</body>
 </page>

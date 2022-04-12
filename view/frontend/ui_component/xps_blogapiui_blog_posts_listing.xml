@@ -25,7 +25,6 @@
 			</storageConfig>
 			<updateUrl path="mui/index/render"/>
 		</settings>
-		<aclResource>XPS_BlogApiUi::blog_posts</aclResource>
 		<dataProvider name="xps_blogapiui_blog_posts_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
 			<settings>
 				<requestFieldName>id</requestFieldName>
@@ -34,36 +33,8 @@
 		</dataProvider>
 	</dataSource>
 	<listingToolbar name="listing_top">
-		<settings>
-			<sticky>true</sticky>
-		</settings>
-		<bookmark name="bookmarks"/>
-		<columnsControls name="columns_controls"/>
-		<filters name="listing_filters"/>
-		<paging name="listing_paging"/>
 	</listingToolbar>
 	<columns name="xps_blogapiui_blog_posts_columns">
-		<settings>
-			<editorConfig>
-				<param name="selectProvider" xsi:type="string">xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_columns.ids</param>
-				<param name="enabled" xsi:type="boolean">true</param>
-				<param name="indexField" xsi:type="string">blog_posts_id</param>
-				<param name="clientConfig" xsi:type="array">
-					<item name="saveUrl" xsi:type="url" path="xps_blogapiui/blogposts/inlineEdit"/>
-					<item name="validateBeforeSave" xsi:type="boolean">false</item>
-				</param>
-			</editorConfig>
-			<childDefaults>
-				<param name="fieldAction" xsi:type="array">
-					<item name="provider" xsi:type="string">xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_listing.xps_blogapiui_blog_posts_columns_editor</item>
-					<item name="target" xsi:type="string">startEdit</item>
-					<item name="params" xsi:type="array">
-						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
-						<item name="1" xsi:type="boolean">true</item>
-					</item>
-				</param>
-			</childDefaults>
-		</settings>
 		<selectionsColumn name="ids">
 			<settings>
 				<indexField>blog_posts_id</indexField>
@@ -88,13 +59,6 @@
 				</editor>
 			</settings>
 		</column>
-		<actionsColumn name="actions" class="XPS\BlogApiUi\Ui\Component\Listing\Column\BlogpostsActions">
-			<settings>
-				<indexField>blog_posts_id</indexField>
-				<resizeEnabled>false</resizeEnabled>
-				<resizeDefaultWidth>107</resizeDefaultWidth>
-			</settings>
-		</actionsColumn>
 		<column name="content">
 			<settings>
 				<filter>text</filter>
