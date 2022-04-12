@@ -1,3 +1,6 @@
+<img width="1440" alt="Screen Shot 2022-04-12 at 8 54 09 PM" src="https://user-images.githubusercontent.com/646650/163033530-95a90f00-9af3-4a9c-a299-7ef46d9f49ac.png">
+<img width="1440" alt="Screen Shot 2022-04-12 at 8 54 01 PM" src="https://user-images.githubusercontent.com/646650/163033541-09e9ce4c-7473-42b1-8914-f77a1dd7b043.png">
+
 # magento2-blog-api-ui
 Magento 2 Extension for Blog API and UI
 
