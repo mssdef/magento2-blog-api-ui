@@ -32,14 +32,7 @@
 			</settings>
 		</dataProvider>
 	</dataSource>
-	<listingToolbar name="listing_top">
-	</listingToolbar>
 	<columns name="xps_blogapiui_blog_posts_columns">
-		<selectionsColumn name="ids">
-			<settings>
-				<indexField>blog_posts_id</indexField>
-			</settings>
-		</selectionsColumn>
 		<column name="blog_posts_id">
 			<settings>
 				<filter>text</filter>
