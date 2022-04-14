@@ -22,5 +22,4 @@ visible by all users.
 
 
 <img width="1440" alt="Screen Shot 2022-04-12 at 8 54 09 PM" src="https://user-images.githubusercontent.com/646650/163033530-95a90f00-9af3-4a9c-a299-7ef46d9f49ac.png">
-<img width="1440" alt="Screen Shot 2022-04-12 at 8 54 01 PM" src="https://user-images.githubusercontent.com/646650/163033541-09e9ce4c-7473-42b1-8914-f77a1dd7b043.png">
-
+<img width="1421" alt="Screen Shot 2022-04-14 at 8 19 41 PM" src="https://user-images.githubusercontent.com/646650/163452709-d10c223f-d020-4472-8452-6d27b6b198d7.png">
