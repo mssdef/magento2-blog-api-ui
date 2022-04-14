@@ -38,6 +38,16 @@ class Submit implements HttpPostActionInterface
     protected $http;
 
     /**
+     * @var Request
+     **/
+    protected $request;
+
+    /**
+     * @var BlogPosts
+     **/
+    protected $model;
+
+    /**
      * Constructor
      *
      * @param PageFactory $resultPageFactory
