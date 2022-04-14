@@ -7,7 +7,9 @@ declare(strict_types=1);
 
 namespace XPS\BlogApiUi\Controller\Posts;
 
+use \XPS\BlogApiUi\Model\BlogPosts;
 use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\App\RequestInterface as Request;
 use Magento\Framework\App\Response\Http;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\LocalizedException;
@@ -47,12 +49,16 @@ class Submit implements HttpPostActionInterface
         PageFactory $resultPageFactory,
         Json $json,
         LoggerInterface $logger,
+        Request $request,
+        BlogPosts $model,
         Http $http
     ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->serializer = $json;
         $this->logger = $logger;
         $this->http = $http;
+        $this->request = $request;
+        $this->model = $model;
     }
 
     /**
@@ -63,12 +69,20 @@ class Submit implements HttpPostActionInterface
     public function execute()
     {
         try {
-            return $this->jsonResponse('your response');
+            if ($this->request->isPost()) {
+                $data = $this->request->getPost();
+                $this->model->setData((array)$data);
+                $this->model->save();
+
+                return $this->jsonResponse((object)['status' => 'ok']);
+            } else {
+                return $this->jsonResponse((object)['status' => 'error']);
+            }
         } catch (LocalizedException $e) {
-            return $this->jsonResponse($e->getMessage());
+            return $this->jsonResponse((object)['error' => $e->getMessage()]);
         } catch (\Exception $e) {
             $this->logger->critical($e);
-            return $this->jsonResponse($e->getMessage());
+            return $this->jsonResponse((object)['error' => $e->getMessage()]);
         }
     }
 
@@ -81,6 +95,7 @@ class Submit implements HttpPostActionInterface
     {
         $this->http->getHeaders()->clearHeaders();
         $this->http->setHeader('Content-Type', 'application/json');
+        $this->http->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
         return $this->http->setBody(
             $this->serializer->serialize($response)
         );

@@ -3,8 +3,8 @@
 	<body>
 		<referenceContainer name="content">
             <uiComponent name="xps_blogapiui_blog_posts_listing_front"/>
-            <uiComponent name="xps_blogapiui_blog_posts_form_front"/>
 
+			<uiComponent name="xps_blogapiui_blog_posts_form_front"/>
 			<block name="posts.index" class="XPS\BlogApiUi\Block\Posts\Index" template="XPS_BlogApiUi::posts/index.phtml">
             </block>
 		</referenceContainer>

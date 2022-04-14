@@ -11,9 +11,6 @@
 		<ajaxSave>true</ajaxSave>
 		<namespace>xps_blogapiui_blog_posts_form_front</namespace>
 		<dataScope>data</dataScope>
-        <buttons>
-            <button name="save" class="XPS\BlogApiUi\Block\Adminhtml\Blog\Posts\Edit\SaveButton"/>
-        </buttons>
 		<deps>
 			<dep>xps_blogapiui_blog_posts_form_front.blog_posts_form_data_source</dep>
 		</deps>
@@ -25,12 +22,19 @@
 			</item>
 		</argument>
 		<settings>
-			<submitUrl path="*/*/save"/>
+			<clientConfig>
+				<param name="validateBeforeSave" xsi:type="boolean">false</param>
+			</clientConfig>
+			<submitUrl path="*/*/submit"/>
 		</settings>
 		<dataProvider name="blog_posts_form_data_source" class="XPS\BlogApiUi\Model\Blogposts\DataProvider">
 			<settings>
+				<clientConfig>
+                    <param name="validateBeforeSave" xsi:type="boolean">false</param>
+                </clientConfig>
 				<requestFieldName>blog_posts_id</requestFieldName>
 				<primaryFieldName>blog_posts_id</primaryFieldName>
+                <submit_url>*/*/submit</submit_url>
 			</settings>
 		</dataProvider>
 	</dataSource>
@@ -49,7 +53,9 @@
 				<label translate="true">title</label>
 				<dataScope>title</dataScope>
 				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+					<rule name="min_text_length" xsi:type="string">5</rule>
+					<rule name="max-words" xsi:type="string">7</rule>
 				</validation>
 			</settings>
 		</field>
@@ -64,7 +70,8 @@
 				<label translate="true">content</label>
 				<dataScope>content</dataScope>
 				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+					<rule name="min_text_length" xsi:type="string">25</rule>
 				</validation>
 			</settings>
 		</field>
@@ -79,9 +86,27 @@
 				<label translate="true">created_at</label>
 				<dataScope>created_at</dataScope>
 				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-date" xsi:type="boolean">true</rule>
 				</validation>
 			</settings>
 		</field>
 	</fieldset>
+    <button name="save">
+        <argument name="data" xsi:type="array">
+			<item name="config" xsi:type="array">
+				<item name="buttonClasses" xsi:type="string">custom-button-class</item>
+				<item name="actions" xsi:type="array">
+					<item name="0" xsi:type="array">
+						<item name="targetName" xsi:type="string">xps_blogapiui_blog_posts_form_front.xps_blogapiui_blog_posts_form_front</item>
+						<item name="actionName" xsi:type="string">submit</item>
+					</item>
+				</item>
+			</item>
+		</argument>
+        <settings>
+            <title>Save Post</title>
+            <name>save_post</name>
+        </settings>
+    </button>
 </form>
