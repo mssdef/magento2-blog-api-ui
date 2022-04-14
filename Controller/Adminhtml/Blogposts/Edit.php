@@ -57,8 +57,8 @@ class Edit extends \XPS\BlogApiUi\Controller\Adminhtml\Blogposts
             $id ? __('Edit Blog Posts') : __('New Blog Posts')
         );
         $resultPage->getConfig()->getTitle()->prepend(__('Blog Postss'));
-        $resultPage->getConfig()->getTitle()->prepend($model->getId() ? __('Edit Blog Posts %1', $model->getId()) : __('New Blog Posts'));
+        $resultPage->getConfig()->getTitle()->prepend($model->getId()
+            ? __('Edit Blog Posts %1', $model->getId()) : __('New Blog Posts'));
         return $resultPage;
     }
 }
-

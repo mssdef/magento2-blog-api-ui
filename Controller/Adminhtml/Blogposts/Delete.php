@@ -44,4 +44,3 @@ class Delete extends \XPS\BlogApiUi\Controller\Adminhtml\Blogposts
         return $resultRedirect->setPath('*/*/');
     }
 }
-

@@ -23,4 +23,3 @@ interface BlogPostsSearchResultsInterface extends \Magento\Framework\Api\SearchR
      */
     public function setItems(array $items);
 }
-

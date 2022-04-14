@@ -63,9 +63,11 @@ class Save extends \Magento\Backend\App\Action
             }
         
             $this->dataPersistor->set('xps_blogapiui_blog_posts', $data);
-            return $resultRedirect->setPath('*/*/edit', ['blog_posts_id' => $this->getRequest()->getParam('blog_posts_id')]);
+            return $resultRedirect->setPath(
+                '*/*/edit',
+                ['blog_posts_id' => $this->getRequest()->getParam('blog_posts_id')]
+            );
         }
         return $resultRedirect->setPath('*/*/');
     }
 }
-

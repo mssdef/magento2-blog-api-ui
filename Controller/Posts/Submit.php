@@ -101,4 +101,3 @@ class Submit implements HttpPostActionInterface
         );
     }
 }
-

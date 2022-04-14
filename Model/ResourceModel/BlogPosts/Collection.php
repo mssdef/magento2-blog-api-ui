@@ -2,6 +2,7 @@
 /**
  * Copyright ©  All rights reserved.
  * See COPYING.txt for license details.
+ * @SuppressWarnings(PHPMD)
  */
 declare(strict_types=1);
 
@@ -9,6 +10,9 @@ namespace XPS\BlogApiUi\Model\ResourceModel\BlogPosts;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class Collection extends AbstractCollection
 {
 
@@ -28,4 +32,3 @@ class Collection extends AbstractCollection
         );
     }
 }
-

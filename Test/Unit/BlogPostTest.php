@@ -50,4 +50,3 @@ class BlogPostTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(false);
     }
 }
-

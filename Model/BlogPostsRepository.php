@@ -20,7 +20,6 @@ use XPS\BlogApiUi\Model\ResourceModel\BlogPosts\CollectionFactory as BlogPostsCo
 
 class BlogPostsRepository implements BlogPostsRepositoryInterface
 {
-
     /**
      * @var BlogPosts
      */
@@ -45,7 +44,6 @@ class BlogPostsRepository implements BlogPostsRepositoryInterface
      * @var CollectionProcessorInterface
      */
     protected $collectionProcessor;
-
 
     /**
      * @param ResourceBlogPosts $resource
@@ -146,4 +144,3 @@ class BlogPostsRepository implements BlogPostsRepositoryInterface
         return $this->delete($this->get($blogPostsId));
     }
 }
-

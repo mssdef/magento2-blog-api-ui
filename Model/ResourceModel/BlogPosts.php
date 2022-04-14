@@ -9,9 +9,11 @@ namespace XPS\BlogApiUi\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class BlogPosts extends AbstractDb
 {
-
     /**
      * @inheritDoc
      */
@@ -20,4 +22,3 @@ class BlogPosts extends AbstractDb
         $this->_init('xps_blogapiui_blog_posts', 'blog_posts_id');
     }
 }
-

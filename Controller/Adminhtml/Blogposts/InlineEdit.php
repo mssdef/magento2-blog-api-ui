@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * Copyright ©  All rights reserved.
  * See COPYING.txt for license details.
@@ -62,4 +63,3 @@ class InlineEdit extends \Magento\Backend\App\Action
         ]);
     }
 }
-

@@ -10,6 +10,9 @@ namespace XPS\BlogApiUi\Model;
 use Magento\Framework\Model\AbstractModel;
 use XPS\BlogApiUi\Api\Data\BlogPostsInterface;
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class BlogPosts extends AbstractModel implements BlogPostsInterface
 {
 
@@ -85,4 +88,3 @@ class BlogPosts extends AbstractModel implements BlogPostsInterface
         return $this->setData(self::CREATED_AT, $createdAt);
     }
 }
-

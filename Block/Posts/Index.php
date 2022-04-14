@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * Copyright ©  All rights reserved.
  * See COPYING.txt for license details.
@@ -23,4 +24,3 @@ class Index extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 }
-

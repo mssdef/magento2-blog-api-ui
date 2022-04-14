@@ -38,4 +38,3 @@ class NewAction extends \XPS\BlogApiUi\Controller\Adminhtml\Blogposts
         return $resultForward->forward('edit');
     }
 }
-

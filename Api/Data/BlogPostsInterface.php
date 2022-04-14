@@ -67,4 +67,3 @@ interface BlogPostsInterface
      */
     public function setCreatedAt($createdAt);
 }
-

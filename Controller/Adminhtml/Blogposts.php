@@ -7,6 +7,9 @@ declare(strict_types=1);
 
 namespace XPS\BlogApiUi\Controller\Adminhtml;
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 abstract class Blogposts extends \Magento\Backend\App\Action
 {
 
@@ -39,4 +42,3 @@ abstract class Blogposts extends \Magento\Backend\App\Action
         return $resultPage;
     }
 }
-
