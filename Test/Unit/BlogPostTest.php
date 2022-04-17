@@ -28,11 +28,16 @@ class BlogPostTest extends \PHPUnit\Framework\TestCase
     private $sut;
 
     /**
+     * @var Submit
+     */
+    private $sutWrong;
+
+    /**
      * Is called before running a test
      */
     protected function setUp(): void
     {
-		$this->objectManager = new ObjectManager($this);
+        $this->objectManager = new ObjectManager($this);
 
         $model = $this->createMock(BlogPosts::class);
         $model->expects($this->atLeastOnce())->method('save');
@@ -42,7 +47,9 @@ class BlogPostTest extends \PHPUnit\Framework\TestCase
                 'setParams','getParam','getActionName','getCookie','getParams','isSecure'])
                 ->getMock();
         $request->method('isPost')->willReturn(true);
-        $request->method('getPost')->willReturn([]);
+        $params = $this->createMock(\Laminas\Stdlib\Parameters::class);
+        $params->method('get')->willReturn(rand(1,10));
+        $request->method('getPost')->willReturn($params);
 
         $http = $this->createMock(Http::class);
         $http->method('getHeaders')->willReturn($http);
@@ -78,8 +85,8 @@ class BlogPostTest extends \PHPUnit\Framework\TestCase
      */
     public function testExecute()
     {
-        $resp = $this->sut->execute();
-        $resp = $this->sutWrong->execute();
+        $this->sut->execute();
+        $this->sutWrong->execute();
 
         $this->assertTrue(true);
     }

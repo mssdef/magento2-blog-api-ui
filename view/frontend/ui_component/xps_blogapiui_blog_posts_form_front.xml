@@ -54,8 +54,8 @@
 				<dataScope>title</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">true</rule>
-					<rule name="min_text_length" xsi:type="string">5</rule>
-					<rule name="max-words" xsi:type="string">7</rule>
+					<rule name="min_text_length" xsi:type="number">5</rule>
+					<rule name="max-words" xsi:type="number">7</rule>
 				</validation>
 			</settings>
 		</field>
@@ -107,6 +107,9 @@
         <settings>
             <title>Save Post</title>
             <name>save_post</name>
+            <imports>
+               <link name="disabled">${$.parentName}.use_config_${$.index}:disableParent</link>
+            </imports>
         </settings>
     </button>
 </form>

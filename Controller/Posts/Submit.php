@@ -81,10 +81,15 @@ class Submit implements HttpPostActionInterface
         try {
             if ($this->request->isPost()) {
                 $data = $this->request->getPost();
-                $this->model->setData((array)$data);
-                $this->model->save();
+                if ($data->get('title') && $data->get('content')
+                    && $data->get('created_at')) {
+                    $this->model->setData((array)$data);
+                    $this->model->save();
+                    return $this->jsonResponse((object)['status' => 'ok']);
+                } else {
+                    return $this->jsonResponse((object)['status' => 'error']);
+                }
 
-                return $this->jsonResponse((object)['status' => 'ok']);
             } else {
                 return $this->jsonResponse((object)['status' => 'error']);
             }

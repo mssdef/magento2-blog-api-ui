@@ -5,8 +5,8 @@
 		<constraint xsi:type="primary" referenceId="PRIMARY">
 			<column name="blog_posts_id"/>
 		</constraint>
-		<column name="title" nullable="true" xsi:type="varchar" comment="title" length="255"/>
-		<column name="content" nullable="true" xsi:type="text" comment="content"/>
-		<column name="created_at" nullable="true" xsi:type="datetime" comment="created_at" default="CURRENT_TIMESTAMP"/>
+		<column name="title" nullable="false" xsi:type="varchar" comment="title" length="255"/>
+		<column name="content" nullable="false" xsi:type="text" comment="content"/>
+		<column name="created_at" nullable="false" xsi:type="datetime" comment="created_at" default="CURRENT_TIMESTAMP"/>
 	</table>
 </schema>
